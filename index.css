@@ -1,0 +1,39 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 99vh;
+    width: 100vw;
+}
+
+#top {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin: 1vh;
+}
+
+#top img {
+    height: 15vh;
+}
+
+#input-div {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: auto;
+
+}
+
+#input-field {
+    width: 75vw;
+    height: 25vh;
+    
+}
