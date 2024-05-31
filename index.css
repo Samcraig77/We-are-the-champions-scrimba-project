@@ -1,11 +1,16 @@
+:root {
+    --app-background: black;
+    --app-font-color: white;
+    --input-text-color: grey;
+    --input-background: rgb(183, 235, 252);
+}
+
+
 html, body {
     margin: 0;
     padding: 0;
-    background-color: black;
-    color: white;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
+    background-color: var(--app-background);
+    color: var(--app-font-color);
     height: 99vh;
     width: 100vw;
 }
@@ -13,27 +18,49 @@ html, body {
 #top {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    justify-items: center;
     align-items: center;
     margin: 1vh;
 }
 
 #top img {
-    height: 15vh;
+    height: 20vh;
+
 }
 
 #input-div {
     display: flex;
-    justify-content: center;
+    width: 75vw;
     margin: auto;
     padding: auto;
+}
 
+.contact-info {
+    width: 20vw;
+    border-radius: 5px;
+    background-color: var(--input-background);
+    padding-left: 5px;
+}
+
+#to-from-field {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 1vh 0;
 }
 
 #input-field {
     width: 75vw;
     height: 25vh;
-    
+    resize: none;
+    padding: 5px;
+    color: var(--input-text-color);
+    background-color: var(--input-background);
+    border-radius: 10px;
+}
+
+#submit-btn {
+    width: 77vw;
+    margin: auto;
+    padding: 2%;
+    border-radius: 8px;
 }

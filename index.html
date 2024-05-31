@@ -10,7 +10,17 @@
             <h1>We are the Champions</h1>
         </div>
         <div id="input-div">
-            <form type="text" id="input-field" placeholder="Write your message here!">
+            <form>
+                <textarea  id="input-field" placeholder="Type your message here!"></textarea>
+                <div id="to-from-field">
+                    <label for="from-input">From: </label>
+                    <input type="text" id="from-input" class="contact-info">
+                    <label for="to-input">To:</label>
+                    <input type="text" id="to-input" class="contact-info">
+                </div>
+                    <button type="submit" id="submit-btn">Submit</button>
+                
+            </form>
         </div>
         <script src="index.js"></script>
     </body>
