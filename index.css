@@ -3,6 +3,7 @@
     --app-font-color: white;
     --input-text-color: grey;
     --input-background: rgb(183, 235, 252);
+    --input-button-color: blue;
 }
 
 
@@ -12,6 +13,7 @@ html, body {
     background-color: var(--app-background);
     color: var(--app-font-color);
     height: 99vh;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 #top {
@@ -19,11 +21,10 @@ html, body {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    margin: 1%;
 }
 
 #top img {
-    height: 20vh;
+    height: 15vh;
 
 }
 
@@ -37,9 +38,12 @@ html, body {
 
 .contact-info {
     width: 20vw;
+    height: 3vh;
     border-radius: 5px;
     background-color: var(--input-background);
     padding-left: 5px;
+    font-family: inherit;
+
 }
 
 #to-from-field {
@@ -51,12 +55,14 @@ html, body {
 
 #input-field {
     width: 76vw;
-    height: 25vh;
+    height: 15vh;
     resize: none;
     padding: 5px;
     color: var(--input-text-color);
     background-color: var(--input-background);
     border-radius: 10px;
+    font-size: large;
+    font-family: inherit;
 }
 
 #submit-btn {
@@ -64,4 +70,12 @@ html, body {
     margin: 0;
     padding: 2% 0;
     border-radius: 8px;
+    font-family: inherit;
+    font-size: larger;
+    font-weight: bolder;
+    background-color: var(--input-button-color);
+}
+
+#endorsments-heading {
+    text-align: center;
 }
