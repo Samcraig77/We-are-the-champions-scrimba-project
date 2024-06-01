@@ -21,6 +21,7 @@ html, body {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 #top img {
@@ -41,19 +42,18 @@ html, body {
     height: 3vh;
     border-radius: 5px;
     background-color: var(--input-background);
-    padding-left: 5px;
     font-family: inherit;
 
 }
 
 #to-from-field {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    padding: 1vh 0;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1vh 0;
 }
 
-#input-field {
+#message-field {
     width: 76vw;
     height: 15vh;
     resize: none;
@@ -63,12 +63,13 @@ html, body {
     border-radius: 10px;
     font-size: large;
     font-family: inherit;
+    flex-grow: 1;
 }
 
-#submit-btn {
+#publish-btn {
     width: 78vw;
-    margin: 0;
-    padding: 2% 0;
+    margin: 7px 0;
+    padding: 2vh 1vw;
     border-radius: 8px;
     font-family: inherit;
     font-size: larger;
@@ -78,4 +79,14 @@ html, body {
 
 #endorsments-heading {
     text-align: center;
+}
+
+#endorsments-area {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#message {
+    color: pink;
 }
