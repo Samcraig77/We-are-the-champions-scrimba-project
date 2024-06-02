@@ -7,17 +7,18 @@ const appSettings = {
 
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
-const endorsmentsInDB = ref(database, "endorsments")
+const endorsementsInDB = ref(database, "endorsements")
 
 const messageField = document.getElementById("message-field")
 const messageFrom = document.getElementById("from-input")
 const messageTo = document.getElementById("to-input")
 const publishBtn = document.getElementById("publish-btn")
-const endorsmentsArea = document.getElementById("endorsments-area")
+const endorsementsArea = document.getElementById("endorsements-area")
+const likesBtn = document.getElementsByClassName("like")
 
 
 
-onValue(endorsmentsInDB, function(snapshot) {
+onValue(endorsementsInDB, function(snapshot) {
     if (snapshot.exists()) {
         let itemsArray = Object.entries(snapshot.val())
         
@@ -28,29 +29,37 @@ onValue(endorsmentsInDB, function(snapshot) {
                 let fromEl = currentItem[1][1]
                 let toEl = currentItem[1][2]
                 
-                renderEndorsments(messageEl, toEl, fromEl)
+                renderEndorsements(messageEl, toEl, fromEl)
                 
             }    
         } else {
-            endormentsArea.innerHTML = "No endorsments here... yet"
+            endorsementsArea.innerHTML = "No endorsements here... yet"
         }
         
     })
 
-    function renderEndorsments(message, to, from) {
-        endorsmentsArea.innerHTML += `<p id="message"> 
-        Hey, ${to}! 
-        ${message} 
-        <span>${from}</span>
-        </p>`
+    function renderLikes(item) {
+
+    }
+
+    function renderEndorsements(message, to, from) {
+        endorsementsArea.innerHTML += `<div class="message"> 
+        <div class="to-user">To ${to}</div> 
+        <hr>
+         ${message} 
+        <hr>
+       <span class="bottom-of-message"><p> <span class="from-user">From ${from} </span> <span class="like"><3</span><span="like-count"> 0 </span></p>
+
+        </div>`
     
     }
 
 publishBtn.addEventListener("click", function() {
-    let message = messageField.value
-    let from = messageFrom.value
-    let to = messageTo.value 
-    push(endorsmentsInDB, [message, from, to])
-
+    if(messageField.value != false) {    
+        let message = messageField.value
+        let from = messageFrom.value
+        let to = messageTo.value 
+        push(endorsementsInDB, [message, from, to])
+        }
 })
 
