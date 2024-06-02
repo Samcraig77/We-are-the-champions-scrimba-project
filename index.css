@@ -1,9 +1,11 @@
 :root {
     --app-background: black;
     --app-font-color: white;
-    --input-text-color: grey;
-    --input-background: rgb(183, 235, 252);
-    --input-button-color: blue;
+    --input-text-color: white;
+    --input-background: #444059;
+    --input-button-color: #28A9F1;
+    --messages-background: white;
+    --messages-font: black;
 }
 
 
@@ -16,22 +18,26 @@ html, body {
     font-family: "Josefin Sans", sans-serif;
 }
 
+div {
+    border: 1px solid red;
+}
+
 #top {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: 1vh;
 }
 
 #top img {
     height: 15vh;
-
 }
 
 #input-div {
     display: flex;
-    width: 76vw;
+    width: 78vw;
     padding: auto;
     box-sizing: border-box;
     margin: auto;
@@ -43,7 +49,7 @@ html, body {
     border-radius: 5px;
     background-color: var(--input-background);
     font-family: inherit;
-
+    color: var(--input-text-color);
 }
 
 #to-from-field {
@@ -52,22 +58,22 @@ html, body {
     justify-content: space-around;
     margin: 1vh 0;
 }
-
+    
 #message-field {
     width: 76vw;
     height: 15vh;
     resize: none;
-    padding: 5px;
+    padding: 15px 5px;
     color: var(--input-text-color);
     background-color: var(--input-background);
     border-radius: 10px;
     font-size: large;
     font-family: inherit;
-    flex-grow: 1;
+
 }
 
 #publish-btn {
-    width: 78vw;
+    width: 76vw;
     margin: 7px 0;
     padding: 2vh 1vw;
     border-radius: 8px;
@@ -75,18 +81,50 @@ html, body {
     font-size: larger;
     font-weight: bolder;
     background-color: var(--input-button-color);
-}
+    border: none;
+    box-shadow: inset -1px -1px silver;
+    }
 
-#endorsments-heading {
+#endorsements-heading {
     text-align: center;
 }
 
-#endorsments-area {
-    display: flex;
+#endorsements-area {
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
     flex-direction: column;
-    text-align: center;
+    margin: auto;
+    width: 78vw;
+    height: auto;
 }
 
-#message {
-    color: pink;
+.message {
+    padding: 10px;
+    margin: 10px;
+    background-color: var(--messages-background);
+    color: var(--messages-font);
+    height: auto;
+    box-sizing: content-box;
+
+}
+
+.message .like {
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+    
+}
+
+.message hr {
+    visibility: hidden;
+}
+
+.to-user, .from-user {
+    font-weight: bold;
+    font-size: large;
+}
+
+.bottom-of-message{
+    position:static;
 }
