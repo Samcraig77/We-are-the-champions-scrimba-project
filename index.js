@@ -14,8 +14,8 @@ const messageFrom = document.getElementById("from-input")
 const messageTo = document.getElementById("to-input")
 const publishBtn = document.getElementById("publish-btn")
 const endorsementsArea = document.getElementById("endorsements-area")
-const likesBtn = document.getElementsByClassName("like")
-
+const likeBtn = document.getElementsByClassName("like-btn")
+const likeCount = document.getElementsByClassName("like-count")
 
 
 onValue(endorsementsInDB, function(snapshot) {
@@ -28,38 +28,49 @@ onValue(endorsementsInDB, function(snapshot) {
                 let messageEl = currentItem[1][0]
                 let fromEl = currentItem[1][1]
                 let toEl = currentItem[1][2]
+                let likesEl = currentItem[1][3]
                 
-                renderEndorsements(messageEl, toEl, fromEl)
-                
-            }    
+                renderEndorsments(messageEl, toEl, fromEl, likesEl)
+                }    
         } else {
-            endorsementsArea.innerHTML = "No endorsements here... yet"
+            endorsementsArea.innerHTML = "No endorsments here... yet"
         }
         
-    })
+})
 
-    function renderLikes(item) {
+function renderEndorsments(message, to, from, likes) {
+        endorsementsArea.innerHTML += `
+        <div class="message"><p> 
+            <p>
+                Hey, 
+                <span class="to-user">${to}
+            </p> 
+            <p>${message}</p> 
+            <span>From: ${from} 
+                <span class="likes-container">
+                    <span class="like-count">${likes}</span>
+                    <button class="like-btn">😸</button>
+                </span>
+            </span>
+        
+        </div>
+        `
+}
 
-    }
+//likeBtn.addEventListener("click", function())
 
-    function renderEndorsements(message, to, from) {
-        endorsementsArea.innerHTML += `<div class="message"> 
-        <div class="to-user">To ${to}</div> 
-        <hr>
-         ${message} 
-        <hr>
-       <span class="bottom-of-message"><p> <span class="from-user">From ${from} </span> <span class="like"><3</span><span="like-count"> 0 </span></p>
 
-        </div>`
+// function addLike(like) {
     
-    }
+// }
 
 publishBtn.addEventListener("click", function() {
-    if(messageField.value != false) {    
-        let message = messageField.value
-        let from = messageFrom.value
-        let to = messageTo.value 
-        push(endorsementsInDB, [message, from, to])
-        }
+   if (messageField.value != null) {
+    let message = messageField.value
+    let from = messageFrom.value
+    let to = messageTo.value
+    let likeCount = 0
+    push(endorsementsInDB, [message, from, to, likeCount])
+   }
 })
 

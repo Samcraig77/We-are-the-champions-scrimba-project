@@ -73,7 +73,7 @@ div {
 }
 
 #publish-btn {
-    width: 76vw;
+    width: 100%;
     margin: 7px 0;
     padding: 2vh 1vw;
     border-radius: 8px;
@@ -90,41 +90,33 @@ div {
 }
 
 #endorsements-area {
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-    flex-direction: column;
+    display: flex;
+    flex-direction: column-reverse;
     margin: auto;
     width: 78vw;
     height: auto;
+    overflow: hidden;
 }
 
 .message {
-    padding: 10px;
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 5px;
+    margin: 15px;
+    box-sizing: content-box;
     background-color: var(--messages-background);
     color: var(--messages-font);
     height: auto;
-    box-sizing: content-box;
+    width: 100%;
 
 }
 
-.message .like {
-    display: flex;
-    justify-content: end;
-    flex-direction: row;
-    
-}
-
-.message hr {
-    visibility: hidden;
-}
-
-.to-user, .from-user {
-    font-weight: bold;
-    font-size: large;
-}
-
-.bottom-of-message{
-    position:static;
+.message .likes-container {
+    padding: auto;
+    text-align: right;
+    justify-items: end;
+    justify-content: right;
+    align-items: right;
+    text-shadow: #000000 1px 1px;
 }
